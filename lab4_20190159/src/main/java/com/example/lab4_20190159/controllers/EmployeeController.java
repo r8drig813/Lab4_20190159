@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.Optional;
+
 @Controller
 @RequestMapping("/employee")
 public class EmployeeController {
@@ -38,5 +40,27 @@ public class EmployeeController {
         model.addAttribute("textoBuscado", searchField);
 
         return "employee/lista";
+    }
+
+
+    @GetMapping("/edit")
+    public String editar(Model model, @RequestParam("id") int id) {
+
+        Optional<Employees> optEmployee = employeeRepository.findById(id);
+
+        if (optEmployee.isPresent()) {
+            Employees shipper = optEmployee.get();
+            model.addAttribute("employee", shipper);
+            return "employee/editFrm";
+        } else {
+            return "redirect:/employee/list";
+        }
+    }
+
+    @PostMapping("/update")
+    public String updateOnlyPhone(Employees shipper) {
+        //employeeRepository.actualizarTelefono(shipper.getPhone(),shipper.getShipperId());
+
+        return "redirect:/employee/list";
     }
 }
