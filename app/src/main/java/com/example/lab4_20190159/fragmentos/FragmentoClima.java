@@ -31,10 +31,10 @@ public class FragmentoClima extends Fragment {
         });
 
         binding.buttonNav2.setOnClickListener(view -> {
-
             NavController navController = NavHostFragment.findNavController(FragmentoClima.this);
-            navController.navigate(R.id.action_fragmentoGeolocalizacion_to_fragmentoClima);
+            navController.navigate(R.id.fragmentoClima);
         });
+
         return binding.getRoot();
     }
 }

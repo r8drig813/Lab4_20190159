@@ -26,7 +26,7 @@ public class FragmentoGeolocalizacion extends Fragment {
         binding.buttonNav1.setOnClickListener(view -> {
 
             NavController navController = NavHostFragment.findNavController(FragmentoGeolocalizacion.this);
-            navController.navigate(R.id.action_fragmentoClima_to_fragmentoGeolocalizacion);
+            navController.navigate(R.id.fragmentoGeolocalizacion);
         });
 
         binding.buttonNav2.setOnClickListener(view -> {
