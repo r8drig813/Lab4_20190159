@@ -54,11 +54,6 @@ public class FragmentoGeolocalizacion extends Fragment {
             navController.navigate(R.id.action_fragmentoGeolocalizacion_to_fragmentoClima);
         });
 
-        geolocalizacionService = new Retrofit.Builder()
-                .baseUrl("http://api.openweathermap.org/geo/1.0")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(GeolocalizacionService.class);
 
         return binding.getRoot();
     }

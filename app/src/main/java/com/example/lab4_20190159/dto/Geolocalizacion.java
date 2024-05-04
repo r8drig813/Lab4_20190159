@@ -1,6 +1,8 @@
 package com.example.lab4_20190159.dto;
 
-public class Geolocalizacion {
+import java.io.Serializable;
+
+public class Geolocalizacion implements Serializable {
 
     private String name;
     private double lat;

@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,12 +14,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Lab4_20190159"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".Navigation_Activity"
+            android:name=".GeolocalizacionActivity"
             android:exported="false" />
         <activity
-            android:name=".fragmentos.FragmentoGeolocalizacion"
+            android:name=".Clima"
+            android:exported="false" />
+        <activity
+            android:name=".Navigation_Activity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -3,17 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/fragmentoClima">
-
-    <fragment
-        android:id="@+id/fragmentoClima"
-        android:name="com.example.lab4_20190159.fragmentos.FragmentoClima"
-        android:label="fragment_fragmento_clima"
-        tools:layout="@layout/fragment_fragmento_clima" >
-        <action
-            android:id="@+id/action_fragmentoClima_to_fragmentoGeolocalizacion"
-            app:destination="@id/fragmentoGeolocalizacion" />
-    </fragment>
+    app:startDestination="@id/fragmentoGeolocalizacion">
     <fragment
         android:id="@+id/fragmentoGeolocalizacion"
         android:name="com.example.lab4_20190159.fragmentos.FragmentoGeolocalizacion"
@@ -25,4 +15,16 @@
             app:popUpTo="@id/fragmentoClima"
             app:popUpToInclusive="true"/>
     </fragment>
+    <fragment
+        android:id="@+id/fragmentoClima"
+        android:name="com.example.lab4_20190159.fragmentos.FragmentoClima"
+        android:label="fragment_fragmento_clima"
+        tools:layout="@layout/fragment_fragmento_clima" >
+        <action
+            android:id="@+id/action_fragmentoClima_to_fragmentoGeolocalizacion"
+            app:destination="@id/fragmentoGeolocalizacion"
+            app:popUpTo="@id/fragmentoGeolocalizacion"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
 </navigation>
