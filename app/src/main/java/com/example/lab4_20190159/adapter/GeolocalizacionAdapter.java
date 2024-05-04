@@ -51,7 +51,7 @@ public class GeolocalizacionAdapter extends RecyclerView.Adapter<Geolocalizacion
         holder.geolocalizacion = geo;
 
         TextView textViewCiudad = holder.itemView.findViewById(R.id.ciudad);
-        textViewCiudad.setText("Ciudad" + geo.getName());
+        textViewCiudad.setText("Ciudad: " + geo.getName());
 
         TextView textViewLatitud = holder.itemView.findViewById(R.id.latitud);
         textViewLatitud.setText("Lat: "+ geo.getLat());

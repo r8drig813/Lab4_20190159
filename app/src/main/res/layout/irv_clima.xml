@@ -25,7 +25,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/ciudad"
+                android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Ahora"
@@ -33,26 +33,38 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/latitud"
+                android:id="@+id/temp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/ciudad"
+                android:layout_alignBaseline="@id/name"
+                android:layout_marginStart="156dp"
+                android:layout_toEndOf="@id/name"
+                android:text="Otro"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/temp_min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/name"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="17dp"
                 android:layout_marginTop="8dp"
                 android:text="Marca" />
 
             <TextView
-                android:id="@+id/longitud"
+                android:id="@+id/temp_max"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/ciudad"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="9dp"
-                android:layout_toEndOf="@id/latitud"
+                android:layout_below="@id/name"
+                android:layout_marginStart="85dp"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@id/temp_min"
                 android:text="Fecha" />
 
         </RelativeLayout>
+
 
     </androidx.cardview.widget.CardView>
     </LinearLayout>

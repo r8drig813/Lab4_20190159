@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/fragmentoGeolocalizacion">
+    app:startDestination="@id/fragmentoClima">
     <fragment
         android:id="@+id/fragmentoGeolocalizacion"
         android:name="com.example.lab4_20190159.fragmentos.FragmentoGeolocalizacion"

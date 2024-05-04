@@ -60,6 +60,5 @@ public class FragmentoClima extends Fragment {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(ClimaService.class);
-
     }
 }

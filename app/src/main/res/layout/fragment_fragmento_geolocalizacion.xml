@@ -36,7 +36,7 @@
                 android:layout_weight="0.7"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="4dp"
-                android:hint="Latitud"
+                android:hint="Ciudad"
                 android:text=""
                 android:inputType="text" />
 

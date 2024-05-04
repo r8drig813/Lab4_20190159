@@ -70,6 +70,7 @@ public class GeolocalizacionActivity extends AppCompatActivity {
                         geolocalizacionAdapter.setContext(GeolocalizacionActivity.this);
                         geolocalizacionAdapter.setListGeolocalizacion(geolocalizacions);
 
+
                         binding.recyclerView.setAdapter(geolocalizacionAdapter);
                         binding.recyclerView.setLayoutManager(new LinearLayoutManager(GeolocalizacionActivity.this));
 
