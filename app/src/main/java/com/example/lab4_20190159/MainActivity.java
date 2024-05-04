@@ -35,9 +35,15 @@ public class MainActivity extends AppCompatActivity {
         Button primeButton = findViewById(R.id.button);
 
         primeButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, Navigation_Activity.class);
-            startActivity(intent);
+            if(tengoInternet()){
+                Intent intent = new Intent(MainActivity.this, GeolocalizacionActivity.class);
+                startActivity(intent);
+            }else{
+                mostrarDialogoConexion();
+            }
         });
+
+
 
 
     }
@@ -52,6 +58,31 @@ public class MainActivity extends AppCompatActivity {
 
         return tieneInternet;
     }
+
+    private void mostrarDialogoConexion() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Conexión no disponible")
+                .setMessage("No se pudo establecer la conexión con Internet.")
+                .setPositiveButton("Configuración", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialogInterface, int id) {
+                        abrirConfiguracion();
+                    }
+                })
+                .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                })
+                .setCancelable(false);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    private void abrirConfiguracion() {
+        Intent intent = new Intent(Settings.ACTION_SETTINGS);
+        startActivity(intent);
+    }
+
 
 
 }

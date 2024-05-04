@@ -54,20 +54,21 @@ public class GeolocalizacionActivity extends AppCompatActivity {
 
         Button searchMovie = findViewById(R.id.buttonSearchGeo);
 
+
+
         searchMovie.setOnClickListener(v -> {
             EditText editText = findViewById(R.id.editTextSearchGeo);
             String city = editText.getText().toString();
 
-            geolocalizacionService.getGeolocalizacion(city,1,"8dd6fc3be19ceb8601c2c3e811c16cf1").enqueue(new Callback<GeolocalizacionDto>() {
+            geolocalizacionService.getGeolocalizacion(city,1,"8dd6fc3be19ceb8601c2c3e811c16cf1").enqueue(new Callback<List<Geolocalizacion>>() {
                 @Override
-                public void onResponse(@NonNull Call<GeolocalizacionDto> call, Response<GeolocalizacionDto> response) {
+                public void onResponse(@NonNull Call<List<Geolocalizacion>> call, Response<List<Geolocalizacion>> response) {
                     if(response.isSuccessful()) {
-                        GeolocalizacionDto body = response.body();
-                        List<Geolocalizacion> geolocalizacionList = body.getLista();
+                        List<Geolocalizacion> geolocalizacions = response.body();
 
                         GeolocalizacionAdapter geolocalizacionAdapter = new GeolocalizacionAdapter();
                         geolocalizacionAdapter.setContext(GeolocalizacionActivity.this);
-                        geolocalizacionAdapter.setListGeolocalizacion(geolocalizacionList);
+                        geolocalizacionAdapter.setListGeolocalizacion(geolocalizacions);
 
                         binding.recyclerView.setAdapter(geolocalizacionAdapter);
                         binding.recyclerView.setLayoutManager(new LinearLayoutManager(GeolocalizacionActivity.this));
@@ -79,7 +80,7 @@ public class GeolocalizacionActivity extends AppCompatActivity {
 
 
                 @Override
-                public void onFailure(Call<GeolocalizacionDto> call, Throwable t) {
+                public void onFailure(Call<List<Geolocalizacion>> call, Throwable t) {
                     t.printStackTrace();
                 }
             });

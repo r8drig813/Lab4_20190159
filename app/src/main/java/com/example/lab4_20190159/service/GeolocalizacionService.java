@@ -11,6 +11,9 @@ import retrofit2.http.Query;
 
 public interface GeolocalizacionService {
     @GET("/geo/1.0/direct")
-    Call<GeolocalizacionDto> getGeolocalizacion(@Query("q") String city, @Query("limit") int one, @Query("appid") String api);
+    Call<List<Geolocalizacion>> getGeolocalizacion(@Query("q") String city, @Query("limit") int one, @Query("appid") String api);
+
+    /*@GET("/geo/1.0/direct?q=Lima&limit=1&appid=8dd6fc3be19ceb8601c2c3e811c16cf1")
+    Call<List<Geolocalizacion>> getGeo();*/
 
 }
