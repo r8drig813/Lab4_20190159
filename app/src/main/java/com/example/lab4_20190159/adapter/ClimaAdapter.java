@@ -50,25 +50,25 @@ public class ClimaAdapter extends RecyclerView.Adapter<ClimaAdapter.ClimaViewHol
         Clima clima = listClima;
         holder.clima = clima;
 
-        TextView textViewCiudad = holder.itemView.findViewById(R.id.ciudad);
+        TextView textViewCiudad = holder.itemView.findViewById(R.id.name);
         textViewCiudad.setText(clima.getName());
 
-        TextView textViewMin = holder.itemView.findViewById(R.id.latitud);
-        textViewMin.setText("Min: "+ clima.getMain().getTempMax());
+        TextView textViewMin = holder.itemView.findViewById(R.id.temp_min);
+        textViewMin.setText("Min: "+ clima.getMain().getTempMax() + "K");
 
-        Log.d("AdminUserListActivity", "Users: " + clima.getMain().getTempMax());
+        TextView textViewMax = holder.itemView.findViewById(R.id.temp_max);
+        textViewMax.setText("Max: "+ clima.getMain().getTempMin() + "K");
 
-        TextView textViewMax = holder.itemView.findViewById(R.id.longitud);
-        textViewMax.setText("Max: "+ clima.getMain().getTempMin());
+        TextView textViewTemperatura = holder.itemView.findViewById(R.id.temp);
+        textViewTemperatura.setText("Temp: "+ clima.getMain().getTempMin() + "K");
 
-        TextView textViewTemperatura = holder.itemView.findViewById(R.id.latitud);
-        textViewTemperatura.setText("Temp: "+ clima.getMain().getTemp());
+        Log.d("TAG", "Temperatura: " + clima.getMain().getTemp());
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return listClima != null ? 1 : 0;
     }
 
 

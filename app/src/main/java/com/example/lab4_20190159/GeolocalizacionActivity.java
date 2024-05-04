@@ -14,12 +14,15 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.lab4_20190159.adapter.GeolocalizacionAdapter;
 import com.example.lab4_20190159.databinding.FragmentFragmentoGeolocalizacionBinding;
 import com.example.lab4_20190159.dto.Geolocalizacion;
 import com.example.lab4_20190159.dto.GeolocalizacionDto;
+import com.example.lab4_20190159.fragmentos.FragmentoClima;
 import com.example.lab4_20190159.service.GeolocalizacionService;
 
 import java.util.Arrays;
@@ -45,6 +48,19 @@ public class GeolocalizacionActivity extends AppCompatActivity {
 
         binding = FragmentFragmentoGeolocalizacionBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+
+        binding.buttonNav1.setOnClickListener(v -> {
+            Intent intent = new Intent(GeolocalizacionActivity.this, GeolocalizacionActivity.class);
+            startActivity(intent);
+        });
+
+        binding.buttonNav2.setOnClickListener(v -> {
+            Intent intent = new Intent(GeolocalizacionActivity.this, ClimaActivity.class);
+            startActivity(intent);
+        });
+
+
 
         geolocalizacionService = new Retrofit.Builder()
                 .baseUrl("http://api.openweathermap.org")

@@ -1,5 +1,6 @@
 package com.example.lab4_20190159;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -36,6 +37,16 @@ public class ClimaActivity extends AppCompatActivity {
 
         binding = FragmentFragmentoClimaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        binding.buttonNav1.setOnClickListener(v -> {
+            Intent intent = new Intent(ClimaActivity.this, GeolocalizacionActivity.class);
+            startActivity(intent);
+        });
+
+        binding.buttonNav2.setOnClickListener(v -> {
+            Intent intent = new Intent(ClimaActivity.this, ClimaActivity.class);
+            startActivity(intent);
+        });
 
         climaService = new Retrofit.Builder()
                 .baseUrl("https://api.openweathermap.org")

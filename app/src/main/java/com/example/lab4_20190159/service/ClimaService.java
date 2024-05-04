@@ -13,4 +13,7 @@ public interface ClimaService {
 
     @GET("/data/2.5/weather")
     Call<Clima> getClima(@Query("lat") double lat, @Query("lon") double lon, @Query("appid") String api);
+
+    @GET("/data/2.5/weather?lat=13&lon=12&appid=792edf06f1f5ebcaf43632b55d8b03fe")
+    Call<Clima> getClima1( );
 }

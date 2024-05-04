@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 public class Main implements Serializable {
-
-    private float temp;
+    @SerializedName("temp")
+    private String temp;
     @SerializedName("feels_like")
     private float feelsLike;
     @SerializedName("temp_min")
@@ -20,11 +20,11 @@ public class Main implements Serializable {
     @SerializedName("grnd_level")
     private int grndLevel;
 
-    public float getTemp() {
+    public String getTemp() {
         return temp;
     }
 
-    public void setTemp(float temp) {
+    public void setTemp(String temp) {
         this.temp = temp;
     }
 
